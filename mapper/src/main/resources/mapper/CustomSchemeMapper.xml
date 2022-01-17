@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.budget.mapper.CustomSchemeMapper">
+    <resultMap id="BaseResultMap" type="com.budget.entitys.CustomScheme">
+        <result column="scheme_id" property="schemeId" jdbcType="INTEGER"/>
+        <result column="scheme_code" property="schemeCode" jdbcType="VARCHAR"/>
+        <result column="process_scene" property="processScene" jdbcType="VARCHAR"/>
+        <result column="process_action" property="processAction" jdbcType="VARCHAR"/>
+        <result column="action_param" property="actionParam" jdbcType="VARCHAR"/>
+        <result column="action_order" property="actionOrder" jdbcType="VARCHAR"/>
+        <result column="memo" property="memo" jdbcType="VARCHAR"/>
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP"/>
+        <result column="update_time" property="updateTime" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+	<sql id="Base_Column_List">
+        scheme_id,scheme_code,process_scene,process_action,action_param,action_order,memo,create_time,update_time
+	</sql>
+
+  <select id="getAllCustomScheme" resultMap="BaseResultMap">
+    select
+      scheme_id,scheme_code,process_scene,process_action,action_param,action_order,memo,create_time,update_time
+    from
+      tb_custom_scheme
+  </select>
+
+</mapper>
